@@ -26,10 +26,22 @@ fun AppNavigation() {
         // Pantalla 2
         composable(
             route = "second_screen/{texto}",
-            arguments = listOf(navArgument("texto"){type = NavType.StringType})
+            arguments = listOf(
+                navArgument("texto") {
+                    type = NavType.StringType
+                }
+            )
         ) { backStackEntry ->
-            val textoRecibido = backStackEntry.arguments?.getString("texto") ?: ""
-            SecondScreen(mensaje = textoRecibido)
+
+            val textoRecibido =
+                backStackEntry.arguments?.getString("texto") ?: ""
+
+            SecondScreen(
+                mensaje = textoRecibido,
+                onBack = {
+                    navController.popBackStack()
+                }
+            )
         }
     }
 }
