@@ -9,7 +9,7 @@ object LogicaCalc {
             "+" -> n1 + n2
             "-" -> n1 - n2
             "x" -> n1 * n2
-            "÷" -> if (n2 != 0.0) n1 / n2 else Double.NaN
+            "÷" -> if (n2 != 0.0) n1 / n2 else return "No se puede dividir entre 0"
             else -> 0.0
         }
         return if (result % 1.0 == 0.0) {
