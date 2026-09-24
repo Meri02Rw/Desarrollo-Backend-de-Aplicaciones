@@ -80,7 +80,7 @@ fun CalculatorScreen() {
                 }
             }
 
-            else -> { // Números (6-9)
+            else -> { // Números (0-9)
                 if (opc.isEmpty()) {
                     if (num1.length < 8) num1 += simbolo
                 } else {
@@ -129,6 +129,7 @@ fun CalculatorScreen() {
                     CalcBtn("C", Modifier.weight(2f)) { onButtonClick("C") }
                     CalcBtn("←", Modifier.weight(1f)) { onButtonClick("←") }
                     CalcBtn("%", Modifier.weight(1f)) { onButtonClick("%") }
+                    CalcBtn("÷", Modifier.weight(1f)) { onButtonClick("÷") }
                 }
                 // Fila 2: 7, 8, 9, x
                 Row(horizontalArrangement = Arrangement.spacedBy(12.dp)) {
